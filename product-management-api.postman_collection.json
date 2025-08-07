@@ -1,0 +1,232 @@
+{
+  "info": {
+    "name": "Ecommerce API",
+    "_postman_id": "ecommerce-api-collection",
+    "description": "Postman collection for testing the Ecommerce API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get all products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/products",
+              "host": [
+                "localhost:8000"
+              ],
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get product by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/products/1",
+              "host": [
+                "localhost:8000"
+              ],
+              "path": [
+                "api",
+                "products",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"MacBook Pro\",\n  \"description\": \"Laptop from Apple\",\n  \"price\": 2500.0,\n  \"stock_quantity\": 10\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/products",
+              "host": [
+                "localhost:8000"
+              ],
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update product",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"MacBook Pro M3\",\n  \"description\": \"Updated model\",\n  \"price\": 2700.0,\n  \"stock_quantity\": 8\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/products/1",
+              "host": [
+                "localhost:8000"
+              ],
+              "path": [
+                "api",
+                "products",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete product",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/products/1",
+              "host": [
+                "localhost:8000"
+              ],
+              "path": [
+                "api",
+                "products",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Get all orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/orders",
+              "host": [
+                "localhost:8000"
+              ],
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get order by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/orders/1",
+              "host": [
+                "localhost:8000"
+              ],
+              "path": [
+                "api",
+                "orders",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_name\": \"Dima\",\n  \"customer_email\": \"dima@example.com\",\n  \"products\": [\n    {\n      \"product_id\": 2,\n      \"quantity\": 1\n    },\n    {\n      \"product_id\": 3,\n      \"quantity\": 2\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/orders",
+              "host": [
+                "localhost:8000"
+              ],
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update order",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_name\": \"Dmytro\",\n  \"customer_email\": \"dmytro@example.com\",\n  \"products\": [\n    {\n      \"product_id\": 4,\n      \"quantity\": 3\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/orders/1",
+              "host": [
+                "localhost:8000"
+              ],
+              "path": [
+                "api",
+                "orders",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete order",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/orders/1",
+              "host": [
+                "localhost:8000"
+              ],
+              "path": [
+                "api",
+                "orders",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
