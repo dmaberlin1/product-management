@@ -1,4 +1,4 @@
-# Ecommerce API
+# product-management API
 
 ## Установка
 
