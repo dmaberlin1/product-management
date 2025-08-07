@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\DTOs\OrderData;
+use App\DTO\OrderData;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderRequest;
 use App\Services\OrderService;
