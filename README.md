@@ -9,6 +9,10 @@ php artisan key:generate
 php artisan migrate --seed
 php artisan serve
 ```
+## Запустите контейнеры:
+```
+docker-compose up -d
+```
 ## API
 
 ### Продукты
