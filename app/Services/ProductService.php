@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\DTO\ProductData;
+use App\DTO\ProductDto;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -13,14 +13,14 @@ class ProductService
         return Product::all();
     }
 
-    public function create(ProductData $data): Product
+    public function create(ProductDto $data): Product
     {
-        return Product::create((array) $data);
+        return Product::create($data->toArray());
     }
 
-    public function update(Product $product, ProductData $data): Product
+    public function update(Product $product, ProductDto $data): Product
     {
-        $product->update((array) $data);
+        $product->update($data->toArray());
         return $product;
     }
 

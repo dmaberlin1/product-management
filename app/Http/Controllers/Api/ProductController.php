@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\DTO\ProductData;
+use App\DTO\ProductDto;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
@@ -20,7 +20,7 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request): JsonResponse
     {
-        $dto = new ProductData(...$request->validated());
+        $dto = new ProductDto(...$request->validated());
         return response()->json($this->service->create($dto), 201);
     }
 
@@ -31,7 +31,7 @@ class ProductController extends Controller
 
     public function update(ProductRequest $request, Product $product): JsonResponse
     {
-        $dto = new ProductData(...$request->validated());
+        $dto = new ProductDto(...$request->validated());
         return response()->json($this->service->update($product, $dto));
     }
 

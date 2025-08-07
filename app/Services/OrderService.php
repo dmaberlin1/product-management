@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\DTO\OrderData;
+use App\DTO\OrderDto;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
@@ -12,7 +12,7 @@ class OrderService
     /**
      * @throws \Throwable
      */
-    public function create(OrderData $data): Order
+    public function create(OrderDto $data): Order
     {
         return DB::transaction(function () use ($data) {
             $total = 0;
@@ -24,8 +24,7 @@ class OrderService
             }
 
             $order = Order::create([
-                'customer_name' => $data->customer_name,
-                'customer_email' => $data->customer_email,
+                ...$data->orderData(),
                 'total_amount' => $total,
             ]);
 

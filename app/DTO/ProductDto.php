@@ -2,7 +2,7 @@
 
 namespace App\DTO;
 
-class ProductData
+class ProductDto extends AbstractDto
 {
     public function __construct(
         public string $name,
