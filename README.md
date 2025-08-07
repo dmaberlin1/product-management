@@ -23,14 +23,37 @@ php artisan serve
 
 ### Заказы 
 
-| Метод | URI              | Описание        |
-| ----- | ---------------- | --------------- |
-| POST  | /api/orders      | Создать заказ   |
-| GET   | /api/orders/{id} | Просмотр заказа |
+| Метод  | URI                | Описание        |
+| ------ | ------------------ | --------------- |
+| GET    | `/api/orders`      | Список заказов  |
+| POST   | `/api/orders`      | Создать заказ   |
+| GET    | `/api/orders/{id}` | Просмотр заказа |
+| PUT    | `/api/orders/{id}` | Обновить заказ  |
+| DELETE | `/api/orders/{id}` | Удалить заказ   |
 
 
-#### Пример создания заказа
+#### Добавить новый товар
+```
+{
+"name": "MacBook Pro",
+"description": "Laptop from Apple",
+"price": 2500.00,
+"stock_quantity": 10
+}
+```
 
+#### Обновить товар
+```
+{
+  "name": "MacBook Pro M3",
+  "description": "Updated model",
+  "price": 2700.00,
+  "stock_quantity": 8
+}
+
+```
+
+#### Создать заказ
 ```
 {
   "customer_name": "Dima",
@@ -41,4 +64,26 @@ php artisan serve
   ]
 }
 
+```
+
+#### Обновить заказ
+```
+{
+  "customer_name": "Dmytro",
+  "customer_email": "dmytro@example.com",
+  "products": [
+    { "product_id": 4, "quantity": 3 }
+  ]
+}
+```
+
+#### Пример ошибки валидации
+```
+{
+  "message": "Validation failed",
+  "errors": {
+    "customer_name": ["The customer_name field is required."],
+    "products": ["The products field is required."]
+  }
+}
 ```
