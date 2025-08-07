@@ -1,5 +1,10 @@
 # product-management API
 
+## Запустите контейнеры:
+```
+docker-compose up -d
+```
+
 ## Установка
 
 ```bash
@@ -9,10 +14,7 @@ php artisan key:generate
 php artisan migrate --seed
 php artisan serve
 ```
-## Запустите контейнеры:
-```
-docker-compose up -d
-```
+
 ## API
 
 ### Продукты
